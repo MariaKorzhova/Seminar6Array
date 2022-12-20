@@ -2,21 +2,38 @@
 double k1 = inputNumber("Введите число k1: ");
 double b2 = inputNumber("Введите число b2: ");
 double k2 = inputNumber("Введите число k2: ");
-double x = (b2 - b1) / (k1 - k2);
-double y = k1 * x + b1;
-double [] Point = new double[2];
-Point[0] = x;
-Point[1] = y;
-print(Point);
+
+double[] Point = new double[2];
+Count(Point);
+
+
+
+void Count(double[] Point)
+{
+    if ((k1 == k2) && (b1 == b2))
+    {
+        System.Console.WriteLine("Прямые совпадают");
+    }
+    else if (k1 == k2)
+    {
+    System.Console.WriteLine("Прямые параллельны");
+    }
+    else
+    {
+        double x = (b2 - b1) / (k1 - k2);
+        double y = k1 * x + b1;
+        Point[0] = x;
+        Point[1] = y;
+        print(Point);
+    }
+return;
+}
 
 
 void print(double[] arr)
 {
 System.Console.WriteLine($"[{String.Join("; ", arr)}]");
 }
-
-
-
 
 
 int inputNumber(string str)
